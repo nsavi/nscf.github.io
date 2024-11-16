@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Encryption using different combinations</h1>
+        <div class="form-group">
+            <label for="algorithm">Select Encryption Combination:</label>
+            <select id="algorithm">
+                <option value="aes-aes-aes">AES → AES → AES</option>
+                <option value="aes-aes-des">AES → AES → DES</option>
+                <option value="aes-aes-3des">AES → AES → 3DES</option>
+                <option value="aes-des-aes">AES → DES → AES</option>
+                <option value="aes-des-des">AES → DES → DES</option>
+                <option value="aes-des-3des">AES → DES → 3DES</option>
+                <option value="aes-3des-aes">AES → 3DES → AES</option>
+                <option value="aes-3des-des">AES → 3DES → DES</option>
+                <option value="des-aes-3des">DES → AES → 3DES</option>
+                <option value="des-3des-aes">DES → 3DES → AES</option>
+                <option value="3des-aes-des">3DES → AES → DES</option>
+                <option value="3des-des-aes">3DES → DES → AES</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="inputText">Enter Text to Encrypt/Decrypt:</label>
+            <textarea id="inputText" rows="5" placeholder="Enter your text here..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="action">Select Action:</label>
+            <select id="action">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+        </div>
+        <button id="executeBtn" onclick="performAction()">Execute</button>
+        <div id="result" class="result">
+            <h3>Result</h3>
+            <p id="output"></p>
+            <p id="time"></p>
+            <p id="security"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
